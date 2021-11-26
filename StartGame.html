@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>Number Guessing Game</title>
+        <style>
+            body{
+                background-image: url(guess\ game.jpg);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                font-size:x-large;
+            }
+
+            #container{
+                background: linear-gradient(135deg, #75b1d8, #7387e0);
+                border: 5px solid white;
+                height:315px;
+                width:750px;
+                margin: 250px auto auto auto;
+                text-align: center;  
+                border-radius: 15px; 
+            }
+
+            p{
+                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+
+            #t1{
+                height: 80px;
+                width: 40%;
+                outline:none;
+                color:#fff;
+                font-size: xx-large;
+                border-radius: 40px;
+                background: linear-gradient(135deg, #71b7e6, #a97bbb);
+                margin-top: 15px;
+                font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                font-weight: bold;
+            }
+
+            #t1:hover{
+                color: gray;
+                background-attachment: fixed;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <p style="font-size: xx-large;">Number Guessing Game</p>
+            <p style="font-size: xx-large;">Are you ready?<br></p>
+            
+            <button id="t1">Let's Start!!</button>
+        </div>
+    </body>
+    <script>
+        document.getElementById("t1").addEventListener("click",aaa);
+        function aaa(){
+            window.location.replace("GuessGame.html");
+        }
+        
+        
+    </script>
+</html>

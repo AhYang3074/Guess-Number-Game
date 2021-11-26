@@ -1,0 +1,133 @@
+<html>
+    <head>
+        <title>Number Guessing Game</title>
+        <style>
+            body{
+                background-image: url(guess\ game.jpg);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                font-size:x-large;
+            }
+
+            #container{
+                background: linear-gradient(135deg, #75b1d8, #7387e0);
+                border: 5px solid white;
+                height:400px;
+                width:750px;
+                margin: 250px auto auto auto;
+                text-align: center;   
+                border-radius: 15px;
+            }
+
+            p{
+                color: black;
+                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+
+            #userinput{
+                border:white;
+                width: 250px;
+                height: 50px;  
+                border-radius: 15px; 
+                font-size: large; 
+                text-align: center;            
+            }
+
+            #enterButton{
+                height:50px;
+                width: 40%;
+                outline:none;
+                color:#fff;
+                border-radius: 40px;
+                background: linear-gradient(135deg, #71b7e6, #a97bbb);
+                margin-top: 40px;
+                font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                font-weight: bold;
+            }
+
+            #enterButton:hover{
+                color: gray;
+                background-attachment: fixed;
+            }
+
+            #mainMenu{
+                height: 50px;
+                width: 40%;
+                outline:none;
+                color:#fff;
+                border-radius: 40px;
+                background: linear-gradient(135deg, #71b7e6, #a97bbb);
+                margin-top: 15px;
+                font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                font-weight: bold;
+            }
+
+            #mainMenu:hover{
+                color: gray;
+                background-attachment:fixed;
+            }
+        </style>
+    </head>
+    <Body>
+        
+            <div id="container">
+                <p id=aaa>Guess a number between 1 - 100</p>
+                <p id="bbb">Enter a number below</p><br>
+                <input type="text" id="userinput">
+            <br>
+            <button id="enterButton" onclick="a1()">Submit Guess</button>
+            
+            <br>
+            
+            <button id="mainMenu">Go Back to Menu</button>
+            
+            </div>
+    </Body>
+    <script>
+        function a1(){
+            var min=1;
+            var max=100;
+            var answer=63;
+            var n =document.getElementById("aaa");
+            var c =document.getElementById("bbb");
+            var guess=document.getElementById("userinput").value;
+                do{
+                    if(guess>0 && guess<answer && guess<=100){
+                        min=guess
+                        n.innerHTML= "Guess a number between "+min+" - "+max;
+                        c.innerHTML= "Your guessed is too low, keep guessing!"
+                        c.style.color="red";
+                    }else if (guess == answer){
+                        n.innerHTML="Bingo!!!"
+                        c.innerHTML="Congratulation! You guessed right!!!";
+                        c.style.color="green";
+                        
+                    }else if(guess>answer && guess<=100){
+                        max=guess;
+                        n.innerHTML="Guess a number between "+min+" - "+max;
+                        c.innerHTML= "Your guessed is too high, keep guessing!"
+                        c.style.color="red";
+                    }else if(guess==""){
+                        c.innerHTML="Invalid Input: Please insert something!!!";
+                        c.style.color="red";
+                    }else if(isNaN(guess)){
+                        c.innerHTML="Invalid Input: That's not a number!";
+                        c.style.color="red";
+                    }else if(guess>100){
+                        c.innerHTML="Invalid Input: Lower, it has to be between 1 and 100";
+                        c.style.color="red";
+                    }else if(guess<=0){
+                        c.innerHTML="Invalid Input: Higher, it has to be between 1 and 100";
+                        c.style.color="red";
+                    }                   
+                }while(c<0);
+                
+            }
+        
+        document.getElementById("mainMenu").addEventListener("click",a2);
+        function a2(){
+            window.location.replace("StartGame.html");
+        }
+    </script>
+</html>
